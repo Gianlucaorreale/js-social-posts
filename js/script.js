@@ -34,11 +34,11 @@ const posts = [
     
 ]
 
-const postsList = document.querySelector('posts-list')
+const postsList = document.querySelector('.posts-list')
 
 let cards = '';
 for (let i = 0; i < posts.length; i++){
-    const postsContainer = posts[i]
+    const postContainer = posts[i]
     cards += ` 
     <div class="post">
       <div class="post__header">
@@ -47,16 +47,16 @@ for (let i = 0; i < posts.length; i++){
             <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione" />
           </div>
           <div class="post-meta__data">
-            <div class="post-meta__author">${posts.name}</div>
+            <div class="post-meta__author">${postContainer.name}</div>
             <div class="post-meta__time">4 mesi fa</div>
           </div>
         </div>
       </div>
       <div class="post__text">
-      ${posts.text}
+      ${postContainer.text}
       </div>
       <div class="post__image">
-        <img src="img/${posts.image}" alt="${posts.image}" />
+        <img src="img/${postContainer.image}" alt="${postContainer.image}" />
       </div>
       <div class="post__footer">
         <div class="likes js-likes">
@@ -72,4 +72,5 @@ for (let i = 0; i < posts.length; i++){
     </div> `
 
 }
+console.log(cards)
 postsList.innerHTML = cards;
